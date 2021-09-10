@@ -1,18 +1,11 @@
 {
   "logs": [
     {
+      "id": 1,
       "message": "Changed network card on server ",
-      "attention": false,
+      "attention": true,
       "tech": "Sarah Wilson",
-      "date": "2021-09-10T03:51:22.244Z",
-      "id": 1
-    },
-    {
-      "message": "Reaplced Fan somewhere",
-      "attention": false,
-      "tech": "Sam Smith",
-      "date": "2021-09-10T03:51:33.855Z",
-      "id": 2
+      "date": "2021-09-10T10:12:31.009Z"
     },
     {
       "message": "Setup NoMad on Macs for auth",
@@ -22,18 +15,11 @@
       "id": 3
     },
     {
-      "message": "dfsdfsf",
+      "message": "Fix comptuers ",
       "attention": false,
-      "tech": "Jenifer} Williams",
-      "date": "2021-09-10T09:15:03.963Z",
-      "id": 4
-    },
-    {
-      "id": 5,
-      "message": "ghfghfgh",
-      "attention": false,
-      "tech": "Hiren } Patel",
-      "date": "2021-09-10T09:40:07.740Z"
+      "tech": "Hiren Patel",
+      "date": "2021-09-10T10:13:48.110Z",
+      "id": 5
     }
   ],
   "techs": [
@@ -56,6 +42,11 @@
       "firstName": "Jenifer",
       "lastName": "Williams",
       "id": 4
+    },
+    {
+      "firstName": "Hiren",
+      "lastName": "Patel",
+      "id": 5
     }
   ]
 }
