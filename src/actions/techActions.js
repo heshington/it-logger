@@ -24,6 +24,50 @@ export const getTechs = () => async (dispatch) => {
   }
 };
 
+//Add technician to server
+export const addTech = (tech) => async (dispatch) => {
+  try {
+    setloading();
+    const res = await fetch('/techs', {
+      method: 'POST',
+      body: JSON.stringify(tech),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    const data = await res.json();
+    dispatch({
+      type: ADD_TECH,
+      payload: data,
+    });
+  } catch (err) {
+    dispatch({
+      type: TECHS_ERROR,
+      payload: err.response.statusText,
+    });
+  }
+};
+
+//Delete Tech from the Server
+export const deleteTech = (id) => async (dispatch) => {
+  try {
+    setloading();
+    await fetch(`/techs/${id}`, {
+      method: 'DELETE',
+    });
+
+    dispatch({
+      type: DELETE_TECH,
+      payload: id,
+    });
+  } catch (err) {
+    dispatch({
+      type: TECHS_ERROR,
+      payload: err.response.statusText,
+    });
+  }
+};
+
 // Set loading true
 export const setloading = () => {
   return {
