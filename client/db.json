@@ -1,0 +1,62 @@
+{
+  "logs": [
+    {
+      "id": 1,
+      "message": "Changed network card on server ",
+      "attention": false,
+      "tech": "Sarah Wilson",
+      "date": "2021-09-13T03:38:41.615Z"
+    },
+    {
+      "id": 3,
+      "message": "Setup NoMad on Macs for auth",
+      "attention": false,
+      "tech": "Homer Simpson",
+      "date": "2021-09-13T03:38:33.266Z"
+    },
+    {
+      "message": "Fix comptuers ",
+      "attention": false,
+      "tech": "Hiren Patel",
+      "date": "2021-09-10T10:13:48.110Z",
+      "id": 5
+    }
+  ],
+  "techs": [
+    {
+      "id": 1,
+      "firstName": "John",
+      "lastName": "Doe"
+    },
+    {
+      "id": 2,
+      "firstName": "Sam",
+      "lastName": "Smith"
+    },
+    {
+      "id": 3,
+      "firstName": "Sara",
+      "lastName": "Wilson"
+    },
+    {
+      "firstName": "Jenifer",
+      "lastName": "Williams",
+      "id": 4
+    },
+    {
+      "firstName": "Hiren",
+      "lastName": "Patel",
+      "id": 5
+    },
+    {
+      "firstName": "Sam ",
+      "lastName": "Samson",
+      "id": 6
+    },
+    {
+      "firstName": "Homer",
+      "lastName": "Simpson",
+      "id": 7
+    }
+  ]
+}
