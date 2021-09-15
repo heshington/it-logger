@@ -42,7 +42,7 @@ export default (state = inititalState, action) => {
       return {
         ...state,
         logs: state.logs.map((log) =>
-          log.id === action.payload.id ? action.payload : log
+          log._id === action.payload._id ? action.payload : log
         ),
       };
     case SEARCH_LOGS: {
