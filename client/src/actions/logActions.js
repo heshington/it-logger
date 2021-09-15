@@ -30,28 +30,28 @@ export const getLogs = () => async (dispatch) => {
 
 //Add new log
 export const addLog = (log) => async (dispatch) => {
-  //try {
-  setloading();
-  const res = await fetch('/logs', {
-    method: 'POST',
-    body: JSON.stringify(log),
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  });
+  try {
+    setloading();
+    const res = await fetch('/logs', {
+      method: 'POST',
+      body: JSON.stringify(log),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
 
-  const data = await res.json();
-  console.log(data);
-  dispatch({
-    type: ADD_LOG,
-    payload: data,
-  });
-  // } catch (err) {
-  //   dispatch({
-  //     type: LOGS_ERROR,
-  //     payload: err.response.statusText,
-  //   });
-  // }
+    const data = await res.json();
+    console.log(data);
+    dispatch({
+      type: ADD_LOG,
+      payload: data,
+    });
+  } catch (err) {
+    dispatch({
+      type: LOGS_ERROR,
+      payload: err.response.statusText,
+    });
+  }
 };
 //Delete log from server
 export const deleteLog = (id) => async (dispatch) => {
@@ -76,7 +76,7 @@ export const deleteLog = (id) => async (dispatch) => {
 export const updateLog = (log) => async (dispatch) => {
   try {
     setloading();
-    const res = await fetch(`/logs/${log.id}`, {
+    const res = await fetch(`/logs/${log._id}`, {
       method: 'PUT',
       body: JSON.stringify(log),
       headers: {
