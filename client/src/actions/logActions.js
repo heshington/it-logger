@@ -42,7 +42,7 @@ export const addLog = (log) => async (dispatch) => {
     });
 
     const data = await res.json();
-    console.log(data);
+
     dispatch({
       type: ADD_LOG,
       payload: data,
