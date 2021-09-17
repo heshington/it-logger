@@ -76,7 +76,7 @@ export const deleteLog = (id) => async (dispatch) => {
 export const updateLog = (log) => async (dispatch) => {
   try {
     setloading();
-    const res = await fetch(`/logs/${log._id}`, {
+    const res = await fetch(`/logs/${log.id}`, {
       method: 'PUT',
       body: JSON.stringify(log),
       headers: {
@@ -85,6 +85,8 @@ export const updateLog = (log) => async (dispatch) => {
     });
 
     const data = await res.json();
+    console.log('The value of the data var from res.json..');
+    console.log(data);
     dispatch({
       type: UPDATE_LOG,
       payload: data,

@@ -4,20 +4,20 @@ import {
   LOGS_ERROR,
   ADD_LOG,
   DELETE_LOG,
-  SET_CURRENT,
-  CLEAR_CURRENT,
   UPDATE_LOG,
   SEARCH_LOGS,
+  SET_CURRENT,
+  CLEAR_CURRENT,
 } from '../actions/types';
 
-const inititalState = {
+const initialState = {
   logs: null,
   current: null,
   loading: false,
   error: null,
 };
-// Get logs from server
-export default (state = inititalState, action) => {
+
+export default (state = initialState, action) => {
   switch (action.type) {
     case GET_LOGS:
       return {
@@ -31,13 +31,12 @@ export default (state = inititalState, action) => {
         logs: [...state.logs, action.payload],
         loading: false,
       };
-    case DELETE_LOG: {
+    case DELETE_LOG:
       return {
         ...state,
         logs: state.logs.filter((log) => log._id !== action.payload),
         loading: false,
       };
-    }
     case UPDATE_LOG:
       return {
         ...state,
@@ -45,24 +44,21 @@ export default (state = inititalState, action) => {
           log._id === action.payload._id ? action.payload : log
         ),
       };
-    case SEARCH_LOGS: {
+    case SEARCH_LOGS:
       return {
         ...state,
         logs: action.payload,
       };
-    }
-    case SET_CURRENT: {
+    case SET_CURRENT:
       return {
         ...state,
         current: action.payload,
       };
-    }
-    case CLEAR_CURRENT: {
+    case CLEAR_CURRENT:
       return {
         ...state,
         current: null,
       };
-    }
     case SET_LOADING:
       return {
         ...state,

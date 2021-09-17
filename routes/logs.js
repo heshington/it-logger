@@ -8,9 +8,21 @@ const Log = require('../models/Logs');
 // @acess   Public
 router.get('/', async (req, res) => {
   try {
-    const logs = await Log.find().sort({
+    let logs = await Log.find().sort({
       date: -1,
     });
+    if (req.query.q) {
+      const search_term = req.query.q.toLowerCase();
+      if (search_term) {
+        logs = logs.filter((log) => {
+          return (
+            log.tech.toLowerCase().includes(search_term) ||
+            log.message.toLowerCase().includes(search_term)
+          );
+        });
+      }
+    }
+
     res.json(logs);
   } catch (err) {
     console.error(err.message);
@@ -51,9 +63,9 @@ router.put('/:id', async (req, res) => {
 
   // Build log object
   const logFields = {};
-  if (message) logFields.message = message;
-  if (attention) logFields.attention = attention;
-  if (tech) logFields.tech = tech;
+  logFields.message = message;
+  logFields.attention = attention;
+  logFields.tech = tech;
 
   try {
     let log = await Log.findById(req.params.id);
