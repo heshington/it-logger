@@ -11,6 +11,7 @@ router.get('/', async (req, res) => {
     let logs = await Log.find().sort({
       date: -1,
     });
+    console.log(logs);
     if (req.query.q) {
       const search_term = req.query.q.toLowerCase();
       if (search_term) {

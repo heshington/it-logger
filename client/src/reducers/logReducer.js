@@ -28,7 +28,7 @@ export default (state = initialState, action) => {
     case ADD_LOG:
       return {
         ...state,
-        logs: [...state.logs, action.payload],
+        logs: [action.payload, ...state.logs],
         loading: false,
       };
     case DELETE_LOG:
